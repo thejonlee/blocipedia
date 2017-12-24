@@ -1,5 +1,5 @@
 # Blocipedia
-is a a Wikipedia clone made using Ruby on Rails.
+A Wikipedia clone made using Ruby on Rails.
 ## Features
 * Users can create an account.
 * Make public or private wiki pages.
