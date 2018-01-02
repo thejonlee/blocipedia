@@ -12,6 +12,24 @@ Rails.application.configure do
   # Show full error reports.
   config.consider_all_requests_local = true
 
+  # Enable email sending through Devise
+  config.action_mailer.perform_deliveries = true
+  # Care if the mailer can't send.
+  config.action_mailer.raise_delivery_errors = true
+
+  # Default URL option for Devise gem
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   user_name:      ENV['SENDMAIL_USERNAME'],
+  #   password:       ENV['SENDMAIL_PASSWORD'],
+  #   domain:         ENV['MAIL_HOST'],
+  #   address:       'smtp.gmail.com',
+  #   port:          '587',
+  #   authentication: :plain,
+  #   enable_starttls_auto: true
+  # }
+
   # Enable/disable caching. By default caching is disabled.
   if Rails.root.join('tmp/caching-dev.txt').exist?
     config.action_controller.perform_caching = true
@@ -26,8 +44,6 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.perform_caching = false
 
