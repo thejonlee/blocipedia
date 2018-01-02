@@ -1,9 +1,7 @@
-<%= form_for @wiki do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+<h1>New Wiki</h1>
 
-  <%= f.label :body %>
-  <%= f.text_area :body %>
-
-  <%= f.submit "Save" %>
-<% end %>
+<div class="row">
+  <div class="col-md-8">
+    <%= render partial: 'form', locals: {wiki: @wiki} %>
+  </div>
+</div>
