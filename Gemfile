@@ -36,10 +36,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'thor', '0.20.0'
 
 gem 'bootstrap-sass'
-
 gem 'devise'
-
 gem 'figaro', '1.0'
+gem 'pundit'
+gem 'rolify'
 
 group :development do
   gem 'listen', '~> 3.0.5'
