@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
   has_many :wikis
 
-  after_create :assign_default_role
+  after_initialize :assign_default_role
 
   def assign_default_role
     self.add_role(:standard) if self.roles.blank?
