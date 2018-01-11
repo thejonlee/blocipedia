@@ -1,10 +1,10 @@
 class ChargesController < ApplicationController
-  before_action authenticate_user!
+  before_action :authenticate_user!
 
   def new
     @stripe_btn_data = {
       key: "#{ Rails.configuration.stripe[:publishable_key] }",
-      description: "Blocipedia Premium Membership - #{current_user.name}",
+      description: "Blocipedia Premium Membership - #{current_user.email}",
       amount: Amount.default
     }
   end
@@ -26,7 +26,7 @@ class ChargesController < ApplicationController
 
     current_user.add_role :premium
     flash[:notice] = "Thanks for upgrading #{current_user.email}! Enjoy your Blocipedia Premium Membership."
-    redirect_to user_path(current_user) # or wherever
+    redirect_to wikis_path # or wherever
 
     # Stripe will send back CardErrors, with friendly messages when something goes wrong.
     # This `rescue block` catches and displays those errors.
