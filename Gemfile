@@ -41,6 +41,7 @@ gem 'figaro', '1.0'
 gem 'pundit'
 gem 'rolify'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+gem 'stripe'
 
 group :development do
   gem 'listen', '~> 3.0.5'
