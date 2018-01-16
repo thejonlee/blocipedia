@@ -1,0 +1,6 @@
+<h4>Select a collaborator to contribute to your Wiki!</h4>
+<%= form_for Collaborator.new do |f| %>
+  <%= f.select(:user_id, @all_collaborators.collect {|w| [w.email, w.id]}) %>
+  <%= f.hidden_field :wiki_id, value: @wiki.id %>
+  <%= f.submit "Add Collaborator"  %>
+<% end %>
