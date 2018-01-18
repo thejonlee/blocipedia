@@ -37,6 +37,7 @@ class ChargesController < ApplicationController
 
   def downgrade
     current_user.remove_role :premium
+    current_user.wikis.update_all(private: false)
     flash[:notice] = "You have downgraded your account from premium to standard."
     redirect_to edit_user_registration_path
   end

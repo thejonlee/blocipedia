@@ -8,6 +8,7 @@ class User < ApplicationRecord
          # :lockable, :timeoutable and :omniauthable
 
   has_many :wikis
+  has_many :collaborators
 
   after_initialize :assign_default_role
 
